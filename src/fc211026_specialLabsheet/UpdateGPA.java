@@ -202,7 +202,6 @@ public class UpdateGPA extends javax.swing.JFrame {
             subject02Label.setText("SUBJECT 02        :  "+resultData[2]);
             subject03Label.setText("SUBJECT 03        :  "+resultData[3]);
             currentGPALabel.setText("CURRENT GPA   :  "+resultData[4]);
-            updateMassegeLabel.setText("- GPA Updated Successfully -");
             updateButton.setVisible(true);
             newGPATextField.setText("");
             newGPATextField.setVisible(true);
@@ -211,6 +210,7 @@ public class UpdateGPA extends javax.swing.JFrame {
     }//GEN-LAST:event_searchButtonActionPerformed
 
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
+        updateMassegeLabel.setText("- GPA Updated Successfully -");
         DatabaseOperations.updateData(indexNumTextField.getText(),newGPATextField.getText() );
     }//GEN-LAST:event_updateButtonActionPerformed
 
