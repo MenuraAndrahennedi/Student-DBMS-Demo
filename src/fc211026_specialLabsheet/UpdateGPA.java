@@ -202,6 +202,7 @@ public class UpdateGPA extends javax.swing.JFrame {
             subject02Label.setText("SUBJECT 02        :  "+resultData[2]);
             subject03Label.setText("SUBJECT 03        :  "+resultData[3]);
             currentGPALabel.setText("CURRENT GPA   :  "+resultData[4]);
+            updateMassegeLabel.setText("");
             updateButton.setVisible(true);
             newGPATextField.setText("");
             newGPATextField.setVisible(true);
