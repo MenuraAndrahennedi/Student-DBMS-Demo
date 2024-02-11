@@ -4,6 +4,8 @@
  */
 package fc211026_specialLabsheet;
 
+import java.awt.Color;
+
 /**
  *
  * @author menur
@@ -146,6 +148,14 @@ public class UpdateGPA extends javax.swing.JFrame {
         indexNumTextField.setBackground(new java.awt.Color(204, 204, 204));
         indexNumTextField.setForeground(new java.awt.Color(0, 0, 0));
         indexNumTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        indexNumTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                indexNumTextFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                indexNumTextFieldFocusLost(evt);
+            }
+        });
         getContentPane().add(indexNumTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 140, 30));
 
         backgroundLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fc211026_specialLabsheet/menuBackground1.jpg"))); // NOI18N
@@ -196,6 +206,20 @@ public class UpdateGPA extends javax.swing.JFrame {
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
         DatabaseOperations.updateData(indexNumTextField.getText(),newGPATextField.getText() );
     }//GEN-LAST:event_updateButtonActionPerformed
+
+    private void indexNumTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_indexNumTextFieldFocusGained
+        if(indexNumTextField.getText().equals("fc######")){
+           indexNumTextField.setText("");
+           indexNumTextField.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_indexNumTextFieldFocusGained
+
+    private void indexNumTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_indexNumTextFieldFocusLost
+        if(indexNumTextField.getText().equals("")){
+           indexNumTextField.setText("fc######");
+           indexNumTextField.setForeground(new Color(140,140,140));
+        }
+    }//GEN-LAST:event_indexNumTextFieldFocusLost
 
     /**
      * @param args the command line arguments
