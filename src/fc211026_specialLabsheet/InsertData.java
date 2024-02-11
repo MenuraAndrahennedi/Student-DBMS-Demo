@@ -63,6 +63,13 @@ public class InsertData extends javax.swing.JFrame {
         backgroundLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowFocusListener(new java.awt.event.WindowFocusListener() {
+            public void windowGainedFocus(java.awt.event.WindowEvent evt) {
+                formWindowGainedFocus(evt);
+            }
+            public void windowLostFocus(java.awt.event.WindowEvent evt) {
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         gobackButton.setBackground(new java.awt.Color(255, 255, 255));
@@ -375,6 +382,10 @@ public class InsertData extends javax.swing.JFrame {
            indexNumTextField.setForeground(new Color(140,140,140));
         }
     }//GEN-LAST:event_indexNumTextFieldFocusLost
+
+    private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowGainedFocus
+        this.requestFocusInWindow();
+    }//GEN-LAST:event_formWindowGainedFocus
 
     /**
      * @param args the command line arguments
